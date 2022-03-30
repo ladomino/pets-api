@@ -79,6 +79,7 @@ router.post('/sign-in', (req, res, next) => {
 			return bcrypt.compare(pw, user.hashedPassword)
 		})
 		.then((correctPassword) => {
+			// correct Password  is the value returned by bcrypt
 			// if the passwords matched
 			if (correctPassword) {
 				// the token will be a 16 byte random hex string
